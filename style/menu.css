@@ -1,0 +1,315 @@
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(img/gellinesbg.png) repeat;
+            background-size: 120px 120px;
+            filter: grayscale(100%);
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .home-container {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 120px;
+            
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: fixed;
+            top: -5px;
+            right: 0px;
+            padding: 0 30px;
+            z-index: 2;
+          }
+
+          .home-btn,
+          .ordr-btn,
+          .lout-btn,
+          .image-button {
+              font-family: 'Rubik', sans-serif;
+              background-color: transparent;
+              border: none;
+              color: black;
+              padding: 5px 20px;
+              font-size: 16px;
+              cursor: pointer;
+              transition: background-color 0.3s ease, box-shadow 0.3s ease;
+              text-shadow: ;
+              letter-spacing: 2px;
+          }
+
+          /* Semi-transparent yellow hover effect */
+          .home-btn:hover,
+          .ordr-btn:hover,
+          .lout-btn:hover,
+          .image-button:hover {
+              background-color: rgba(0, 0, 0, 0.1); /* Transparent yellow */
+              box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Elevation effect */
+          }
+
+          .logo img {
+              height: 120px;
+              width: 130px;
+              position: absolute;
+              left: 0;
+              top: 0px;
+              z-index: 3;
+              margin-left: 130px;
+          }
+
+          .image-button {
+              display: inline-block;
+              border: none;
+              padding: 0;
+              background: none;
+              cursor: pointer;
+          }
+
+          .image-button img {
+              width: 30px;
+              height: auto;
+          }
+
+          /* Dropdown CSS */
+          .dropdown {
+              position: relative;
+              display: inline-block;
+          }
+
+          .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: white;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+              z-index: 1;
+          }
+
+          .dropdown-content a {
+            font-family: 'Rubik', sans-serif;
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+          }
+
+          .dropdown-content a:hover {
+              background-color: rgba(0, 0, 0, 0.1);
+          }
+
+          .dropdown:hover .dropdown-content {
+              display: block;
+          }
+
+          /* Main Menu CSS */
+          .main-menu {
+            margin-top: 100px; /* Adjusted margin to bring it below the header */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: calc(100vh - 140px); /* Adjust for the header height */
+        }
+
+            .menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Ensures items are aligned to the left */
+    gap: 10px; /* Add some space between items */
+    padding: 20px;
+}
+
+.menu-item {
+    width: 250px; /* Fixed width for each menu item */
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    .menu-container {
+        justify-content: flex-start; /* Adjust for smaller screens */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .menu-container {
+        justify-content: space-evenly; /* Evenly distribute items across larger screens */
+    }
+}
+
+
+        .quantity-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .decrement-btn, .increment-btn {
+            background-color: #ffdb44;
+            border: 1px solid #ccc;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            text-align: center;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        /* Cart button positioning */
+        /* Center the cart button within the parent container */
+/* Cart button styling */
+.cart-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Add some spacing from other content if needed */
+    width: 100%; /* Make sure it spans the width of its parent */
+    cursor: pointer;
+    background: none; /* Remove any background color */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove any shadow */
+}
+
+
+.cart-btn img {
+    width: 30px;
+    height: auto;
+}
+
+
+
+        .category-filter-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .category-filter-container label {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        #categoryFilter {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 250px; /* Fixed width to prevent movement */
+            text-align: center;
+        }
+
+        #categoryFilter:hover {
+            background-color: #ffffff;
+            border-color: #bbb;
+        }
+
+        #categoryFilter:focus {
+            outline: none;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+                /* Add spacing between the icons in the header */
+.image-button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    margin-left: 20px; /* Adjust this value to add space between icons */
+}
+
+.image-button img {
+    width: 30px;
+    height: auto;
+}
+
+/* Dropdown CSS for Profile */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.profile-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.profile-dropdown-content a {
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.profile-dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.profile-dropdown:hover .profile-dropdown-content {
+    display: block;
+}
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            bottom: 0;
+            width:  100%;
+            box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+          }
+          footer .footer-content {
+            font-size: 13px;
+              padding-left: 50px; /* Adjust this value to increase the left padding */
+          }
+
+    </style>

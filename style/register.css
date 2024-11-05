@@ -1,0 +1,307 @@
+ <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(img/gellinesbg.png) repeat;
+            background-size: 120px 120px;
+            filter: grayscale(100%);
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+
+/* Add some custom styles for the eye icon */
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 5px;
+    border: none;
+    background-color: #ffd700;
+    color: #000;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #ffcc00;
+}
+
+.button-container {
+    text-align: center;
+}
+
+button.prev {
+    background-color: #ccc;
+}
+
+button.prev:hover {
+    background-color: #bbb;
+}
+
+
+        .step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+        .home-container {
+            background-color: rgba(0, 0, 0, 0); /* Semi-transparent black */
+            backdrop-filter: blur(10px); /* Blur effect */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 120px;
+            
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: fixed;
+            top: -5px;
+            right: 0px;
+            padding: 0 30px;
+            z-index: 2;
+          }
+
+          .home-btn,
+          .ordr-btn,
+          .lout-btn,
+          .image-button {
+              font-family: 'Rubik', sans-serif;
+              background-color: transparent;
+              border: none;
+              color: black;
+              padding: 5px 20px;
+              font-size: 16px;
+              cursor: pointer;
+              transition: background-color 0.3s ease, box-shadow 0.3s ease;
+              text-shadow: ;
+              letter-spacing: 2px;
+          }
+
+          /* Semi-transparent yellow hover effect */
+          .home-btn:hover,
+          .ordr-btn:hover,
+          .lout-btn:hover,
+          .image-button:hover {
+              background-color: rgba(0, 0, 0, 0.1); /* Transparent yellow */
+              box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Elevation effect */
+          }
+
+          .logo img {
+              height: 120px;
+              width: 130px;
+              position: absolute;
+              left: 0;
+              top: 0px;
+              z-index: 3;
+              margin-left: 130px;
+          }
+
+          .image-button {
+              display: inline-block;
+              border: none;
+              padding: 0;
+              background: none;
+              cursor: pointer;
+          }
+
+          .image-button img {
+              width: 30px;
+              height: auto;
+          }
+
+          /* Dropdown CSS */
+          .dropdown {
+              position: relative;
+              display: inline-block;
+          }
+
+          .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: rgba(0, 0, 0, 0);
+              min-width: 160px;
+              box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+              z-index: 1;
+          }
+
+          .dropdown-content a {
+            font-family: 'Rubik', sans-serif;
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+          }
+
+          .dropdown-content a:hover {
+              background-color: rgba(0, 0, 0, 0.1);
+          }
+
+          .dropdown:hover .dropdown-content {
+              display: block;
+          }
+
+        .register-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border-radius: 15px;
+            width: 600px;
+            height: 410px;
+            padding: 20px;
+            margin: 150px auto;
+            box-shadow: 0px 4px 200px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Style for input fields */
+        .form-input {
+            border-radius: 5px;
+            height: 40px;
+            width: 90%;
+            margin-bottom: 15px;
+            outline: none;
+            border: 1px solid #ccc;
+            padding: 0 10px;
+            font-size: 16px;
+        }
+
+        .form-input::placeholder {
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .register-container button {
+            margin-top: 15px;
+            background-color: #ffdb44;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+            height: 40px;
+            width: 90%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e6c84e;
+        }
+
+        .clear-button {
+            margin: 10px auto;
+            background-color: #ffdb44; /* Red for clear button */
+            color: black;
+        }
+
+        /* Style for checkbox */
+        label input[type="checkbox"] {
+            accent-color: #ffdb44;
+            cursor: pointer;
+        }
+
+        label {
+            align-self: flex-start;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around; /* Fixes spacing */
+            width: 100%; /* Ensures buttons take up full width */
+            margin: 15px auto;
+        }
+
+        .button-container button {
+            flex: 1; /* Allow buttons to grow evenly */
+            margin: 0 10px; /* Spacing between buttons */
+        }
+
+        a {
+            color: #ffdb44;
+            text-decoration: underline;
+            
+        }
+
+        a:hover {
+            color: #e6c84e;
+            
+        }
+
+        /* Style the checkbox */
+        label input[type="checkbox"] {
+            accent-color: #ffdb44; /* For supported browsers */
+            cursor: pointer;
+        }
+    </style>

@@ -1,0 +1,85 @@
+/* Styling for available and occupied tables */
+.table-item.available {
+    background-color: lightgreen; /* Available table color */
+    cursor: pointer;
+}
+
+.table-item.occupied {
+    background-color: red; /* Occupied table color */
+    cursor: not-allowed;
+}
+
+/* Table grid layout */
+.table-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* General styling for each table item */
+.table-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Styling for selected table */
+.table-item.selected {
+    background-color: #aed581; /* Selected table color */
+    cursor: pointer;
+}
+
+/* Image inside the table */
+.table-item img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Text inside the table */
+.table-item p {
+    margin: 10px 0 0;
+    font-size: 16px;
+}
+
+/* Reserve button */
+#reserve-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#reserve-btn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* Custom Pax and Section Styling */
+.hidden-section {
+    display: none;
+}
+
+.visible-section {
+    display: block;
+}
+
+/* Back button styling */
+.back-btn {
+    margin-top: 10px;
+    background-color: #ddd;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #ccc;
+}
